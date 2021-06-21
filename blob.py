@@ -1,6 +1,14 @@
 from pymol import cmd
 import glob
 
+'''
+This script is used to create marshmallow-like blob objects for each unique protein chain in pymol. Usage: 
+	1. load this script in pymol via load /path/to/blob.py
+	2. blob my_designs # recognizes regex, so e.g. blob * will blob everything.
+
+This is based off Will Sheffler's marshmallow.py blobbing approach, see https://github.com/willsheffler/pymol for more.
+'''
+
 def blob(designs):
 	cmd.do("remove hydro")
 	cmd.do("hide lines")
